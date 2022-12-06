@@ -3,9 +3,11 @@ const ssh = new NodeSSH()
 
 const fs = require('fs')
 const readline = require('readline')
-console.log(process.argv)
+
 if (process.argv.length < 5) {
     console.log(`Usage: ${process.argv[1]} username server wordlist`)
+    process.exit(1)
+
 }
 const rl = readline.createInterface({
     input: fs.createReadStream(process.argv[4]),
